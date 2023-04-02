@@ -3,48 +3,144 @@
   <head>
     <title>Analog Clock</title>
     <style>
-      .clock {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 2px solid black;
-        margin: 0 auto;
-      }
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 0 auto;
+}
 
-      .hour-hand,
-      .minute-hand,
-      .second-hand {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform-origin: bottom center;
-      }
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: bottom center;
+}
 
-      .hour-hand {
-        width: 5px;
-        height: 50px;
-        background-color: black;
-        transform: rotate(30deg);
-      }
+.hour-hand {
+  width: 5px;
+  height: 50px;
+  background-color: black;
+  transform: rotate(30deg);
+}
 
-      .minute-hand {
-        width: 3px;
-        height: 80px;
-        background-color: black;
-        transform: rotate(45deg);
-      }
+.minute-hand {
+  width: 3px;
+  height: 80px;
+  background-color: black;
+  transform: rotate(45deg);
+}
 
-      .second-hand {
-        width: 1px;
-        height: 100px;
-        background-color: red;
-        transform: rotate(60deg);
-      }
+.second-hand {
+  width: 1px;
+  height: 100px;
+  background-color: red;
+  transform: rotate(60deg);
+}
+
+.clock::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  left: calc(50% - 5px);
+  top: calc(50% - 5px);
+}
+
+.clock::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid black;
+  left: calc(50% - 70px);
+  top: calc(50% - 70px);
+}
+
+.clock .roman-numeral {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.clock .roman-numeral.one {
+  left: calc(50% - 4px);
+  top: 20px;
+}
+
+.clock .roman-numeral.two {
+  right: calc(50% - 4px);
+  top: 20px;
+}
+
+.clock .roman-numeral.three {
+  right: 20px;
+  top: calc(50% - 4px);
+}
+
+.clock .roman-numeral.four {
+  right: calc(50% - 4px);
+  bottom: 20px;
+}
+
+.clock .roman-numeral.five {
+  left: calc(50% - 4px);
+  bottom: 20px;
+}
+
+.clock .roman-numeral.six {
+  left: 20px;
+  top: calc(50% - 4px);
+}
+
+.clock .roman-numeral.seven {
+  left: 20px;
+  top: 20px;
+}
+
+.clock .roman-numeral.eight {
+  right: 20px;
+  top: 20px;
+}
+
+.clock .roman-numeral.nine {
+  right: 20px;
+  bottom: 20px;
+}
+
+.clock .roman-numeral.ten {
+  left: 20px;
+  bottom: 20px;
+}
+
+.clock .roman-numeral.eleven {
+  left: 20px;
+  bottom: calc(50% - 4px);
+}
+
+.clock .roman-numeral.twelve {
+  left: calc(50% - 4px);
+  top: calc(50% - 20px);
+}
+
     </style>
   </head>
   <body>
     <div class="clock">
+      <div class="roman-numeral one">I</div>
+      <div class="roman-numeral two">II</div>
+      <div class="roman-numeral
+
       <div class="hour-hand"></div>
       <div class="minute-hand"></div>
       <div class="second-hand"></div>
